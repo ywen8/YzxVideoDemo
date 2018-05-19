@@ -1,0 +1,31 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '26.0.2'
+
+    defaultConfig {
+        applicationId "com.yzx.im_demo"
+        minSdkVersion 14
+        targetSdkVersion 19
+        versionCode 7
+        versionName "3.0.9.1"
+        sourceSets {
+            main {
+                java.srcDirs = ['src/main/java', 'src/main/aidl']
+            }
+        }
+    }
+    buildTypes {
+        release {
+            shrinkResources false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+}
